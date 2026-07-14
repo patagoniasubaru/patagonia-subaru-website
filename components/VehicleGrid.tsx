@@ -42,9 +42,26 @@ const mockVehicles = [
 ];
 
 export default function VehicleGrid() {
-  // Función para manejar el clic en Consultar (puedes reemplazarla con un Modal o Link real)
+  // Función para manejar el clic en Consultar
   const handleConsultar = (model: string) => {
-    alert(`Abriendo formulario de contacto por: ${model}`);
+    // 1. Buscamos el input del formulario por su ID y le pegamos el nombre del auto
+    const inputVehiculo = document.getElementById('vehiculo') as HTMLInputElement;
+    if (inputVehiculo) {
+      inputVehiculo.value = model;
+    }
+
+    // 2. Buscamos la sección de contacto y hacemos que la pantalla se deslice hasta ahí
+    const seccionContacto = document.getElementById('contacto');
+    if (seccionContacto) {
+      seccionContacto.scrollIntoView({ behavior: 'smooth' });
+      
+      // Opcional: Le hacemos un pequeño "foco" al input para que el usuario empiece a escribir su nombre
+      setTimeout(() => {
+        const inputNombre = document.getElementById('nombre') as HTMLInputElement;
+        if (inputNombre) inputNombre.focus();
+      }, 500); // Espera medio segundo a que termine de scrollear
+    }
+  };
   };
 
   return (
