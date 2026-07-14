@@ -26,7 +26,7 @@ export default function Hero() {
 
         {/* Botón Dorado */}
         <Link 
-          href="/vehiculos"
+          href="#vehiculos"
           className="bg-[#E5B22C] hover:bg-[#d4a020] text-[#013A81] font-bold text-lg px-8 py-4 rounded-md transition-all transform hover:-translate-y-1 shadow-lg"
         >
           Ver Vehículos

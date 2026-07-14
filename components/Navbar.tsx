@@ -9,13 +9,13 @@ export default function Navbar() {
           Patagonia<span className="text-[#E5B22C]">Subaru</span>
         </Link>
 
-        {/* Enlaces de Navegación e Instagram */}
-        <div className="flex items-center space-x-6">
-          <Link href="/vehiculos" className="hover:text-gray-300 transition-colors hidden md:block font-medium">
+       {/* Enlaces de Navegación e Instagram */}
+       <div className="flex items-center space-x-6">
+          <Link href="#vehiculos" className="hover:text-gray-300 transition-colors hidden md:block font-medium">
             Vehículos
           </Link>
-          <Link href="/nosotros" className="hover:text-gray-300 transition-colors hidden md:block font-medium">
-            Nosotros
+          <Link href="#contacto" className="hover:text-gray-300 transition-colors hidden md:block font-medium">
+            Contacto
           </Link>
 
           {/* Ícono de Instagram */}
