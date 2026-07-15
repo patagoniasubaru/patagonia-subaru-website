@@ -17,7 +17,6 @@ export default function ContactForm() {
     setStatusMessage({ type: null, text: '' });
 
     try {
-      // Reemplaza estas variables con tus IDs de EmailJS (ver guía abajo)
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
@@ -67,7 +66,7 @@ export default function ContactForm() {
                 name="user_name"
                 id="nombre"
                 required
-                className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
+                className="px-4 py-3 rounded-md border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
                 placeholder="Ej. Martín Pérez"
               />
             </div>
@@ -80,7 +79,7 @@ export default function ContactForm() {
                 name="user_phone"
                 id="telefono"
                 required
-                className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
+                className="px-4 py-3 rounded-md border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
                 placeholder="Ej. +54 9 294 4123456"
               />
             </div>
@@ -93,7 +92,7 @@ export default function ContactForm() {
               type="text"
               name="user_vehicle"
               id="vehiculo"
-              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
+              className="px-4 py-3 rounded-md border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all"
               placeholder="Ej. Forester 2019 o 'Busco un usado automático'"
             />
           </div>
@@ -106,7 +105,7 @@ export default function ContactForm() {
               id="mensaje"
               rows={4}
               required
-              className="px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all resize-none"
+              className="px-4 py-3 rounded-md border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#013A81] focus:border-transparent transition-all resize-none"
               placeholder="Contanos qué estás buscando o qué dudas tenés..."
             ></textarea>
           </div>
