@@ -1,7 +1,8 @@
 'use client';
-import React from 'react';
 
-// Datos de prueba (en un caso real, esto vendría de una base de datos o API)
+import React from 'react';
+import Image from 'next/image';
+
 const mockVehicles = [
   {
     id: 1,
@@ -42,26 +43,21 @@ const mockVehicles = [
 ];
 
 export default function VehicleGrid() {
-  // Función para manejar el clic en Consultar
   const handleConsultar = (model: string) => {
-    // 1. Buscamos el input del formulario por su ID y le pegamos el nombre del auto
     const inputVehiculo = document.getElementById('vehiculo') as HTMLInputElement;
     if (inputVehiculo) {
       inputVehiculo.value = model;
     }
 
-    // 2. Buscamos la sección de contacto y hacemos que la pantalla se deslice hasta ahí
     const seccionContacto = document.getElementById('contacto');
     if (seccionContacto) {
       seccionContacto.scrollIntoView({ behavior: 'smooth' });
       
-      // Opcional: Le hacemos un pequeño "foco" al input para que el usuario empiece a escribir su nombre
       setTimeout(() => {
         const inputNombre = document.getElementById('nombre') as HTMLInputElement;
         if (inputNombre) inputNombre.focus();
-      }, 500); // Espera medio segundo a que termine de scrollear
+      }, 500);
     }
-  };
   };
 
   return (
@@ -76,35 +72,30 @@ export default function VehicleGrid() {
           </p>
         </div>
 
-        {/* Grilla Responsiva */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {mockVehicles.map((vehicle) => (
             <div 
               key={vehicle.id} 
               className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col transition-transform hover:-translate-y-1 hover:shadow-xl"
             >
-              {/* Foto del vehículo */}
               <div className="h-48 w-full overflow-hidden relative bg-gray-200">
-                <img 
+                <Image 
                   src={vehicle.imageUrl} 
                   alt={`${vehicle.year} ${vehicle.model}`} 
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                {/* Badge de año flotante sobre la imagen */}
-                <div className="absolute top-3 right-3 bg-[#E5B22C] text-[#013A81] font-bold px-3 py-1 rounded-md text-sm shadow-sm">
+                <div className="absolute top-3 right-3 bg-[#E5B22C] text-[#013A81] font-bold px-3 py-1 rounded-md text-sm shadow-sm z-10">
                   {vehicle.year}
                 </div>
               </div>
 
-              {/* Contenido de la tarjeta */}
               <div className="p-5 flex flex-col flex-grow">
-                
-                {/* Título */}
                 <h3 className="text-xl font-bold text-gray-800 mb-3 leading-tight line-clamp-2">
                   {vehicle.model}
                 </h3>
 
-                {/* Etiquetas (Badges) */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="bg-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-md border border-gray-200">
                     Symmetrical AWD
@@ -114,7 +105,6 @@ export default function VehicleGrid() {
                   </span>
                 </div>
 
-                {/* Detalles: Kilometraje y Precio */}
                 <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-end mb-5">
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Kilometraje</span>
@@ -128,7 +118,6 @@ export default function VehicleGrid() {
                   </div>
                 </div>
 
-                {/* Botón de Acción */}
                 <button
                   onClick={() => handleConsultar(vehicle.model)}
                   className="w-full bg-[#013A81] hover:bg-[#012a5e] text-white font-semibold py-3 rounded-lg transition-colors shadow-sm"
