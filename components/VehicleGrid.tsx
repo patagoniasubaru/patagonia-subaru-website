@@ -10,7 +10,7 @@ const mockVehicles = [
     transmission: 'Lineartronic CVT',
     mileage: '85.000 km',
     price: 22500,
-    imageUrl: 'https://images.unsplash.com/photo-1596484552993-94c6f5056711?q=80&w=600&auto=format&fit=crop', // Placeholder Forester
+    imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const mockVehicles = [
     transmission: 'Lineartronic CVT',
     mileage: '42.000 km',
     price: 26000,
-    imageUrl: 'https://images.unsplash.com/photo-1580274455136-1e90dcb137eb?q=80&w=600&auto=format&fit=crop', // Placeholder Crosstrek/XV
+    imageUrl: 'https://images.unsplash.com/photo-1503376712349-a1afdb0d3023?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const mockVehicles = [
     transmission: 'Manual 6v',
     mileage: '115.000 km',
     price: 16800,
-    imageUrl: 'https://images.unsplash.com/photo-1549646030-f203874cbdfa?q=80&w=600&auto=format&fit=crop', // Placeholder XV
+    imageUrl: 'https://images.unsplash.com/photo-1469285994282-454ceb49e63c?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const mockVehicles = [
     transmission: 'Lineartronic CVT',
     mileage: '98.000 km',
     price: 24000,
-    imageUrl: 'https://images.unsplash.com/photo-1533044309907-0fa341926861?q=80&w=600&auto=format&fit=crop', // Placeholder Outback
+    imageUrl: 'https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=600&q=80',
   }
 ];
 
